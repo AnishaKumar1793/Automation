@@ -22,9 +22,6 @@ public class MainActivity extends AppCompatActivity {
         iv = findViewById(R.id.iv);
         Animation anim = AnimationUtils.loadAnimation(this, R.anim.transition);
         iv.startAnimation(anim);
-        if (!checkpermission(Manifest.permission.SEND_SMS)) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, SEND_SMS_PERMISSION_REQUEST_CODE);
-        }
         Thread timer = new Thread() {
             public void run() {
                 try {
@@ -41,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
         timer.start();
     }
 
-    public boolean checkpermission(String Permission) {
-        int check = ContextCompat.checkSelfPermission(this, Permission);
-        return (check == PackageManager.PERMISSION_GRANTED);
-    }
+//    public boolean checkpermission(String Permission) {
+//        int check = ContextCompat.checkSelfPermission(this, Permission);
+//        return (check == PackageManager.PERMISSION_GRANTED);
+//    }
 }
