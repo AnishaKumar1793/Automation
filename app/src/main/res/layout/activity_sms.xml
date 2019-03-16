@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SMSActivity">
+
+    <EditText
+        android:id="@+id/inputContact"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:hint="Please select Contact"
+        android:inputType="phone"/>
+    <ImageView
+        android:id="@+id/contacts_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignRight="@+id/inputContact"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_person_black_24dp"
+        />
+
+
+    <EditText
+        android:id="@+id/inputPumpCount"
+        android:layout_below="@+id/inputContact"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:hint="Simultaneous pump count"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/inputTimer"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/inputPumpCount"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:hint="Time duration for pump"
+        android:inputType="number" />
+    <Button
+        android:id="@+id/turnON"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/inputTimer"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="20dp"
+        android:text="Turn ON"/>
+
+    <Button
+        android:id="@+id/turnOFF"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/inputTimer"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="20dp"
+        android:text="Turn OFF"/>
+
+    <Button
+        android:id="@+id/button_Contact"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/turnOFF"
+        android:layout_centerHorizontal="true"
+        android:text="Update Number" />
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:adjustViewBounds="true"
+        android:src="@drawable/crop" />
+
+</RelativeLayout>
