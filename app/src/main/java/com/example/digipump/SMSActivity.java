@@ -21,7 +21,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -38,6 +37,7 @@ public class SMSActivity extends AppCompatActivity {
     private EditText pump_Count;
     private EditText time_Duration;
     private EditText inputContact;
+    private EditText total_Pumps;
     private Button turn_ON;
     private Button turn_OFF;
     private String Contact_Info = null;
@@ -53,6 +53,7 @@ public class SMSActivity extends AppCompatActivity {
         turn_OFF = findViewById(R.id.turnOFF);
         pump_Count = findViewById(R.id.inputPumpCount);
         time_Duration = findViewById(R.id.inputTimer);
+        total_Pumps = findViewById(R.id.total_Pumps);
         turn_ON.setEnabled(false);
         turn_OFF.setEnabled(false);
         contact_Button = findViewById(R.id.contacts_button);
@@ -79,6 +80,25 @@ public class SMSActivity extends AppCompatActivity {
                 } else {
                     Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
                     startActivityForResult(intent, REQUEST_CODE);
+                }
+            }
+        });
+
+        turn_ON.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (pump_Count.getText().toString().equals("") || time_Duration.getText().toString().equals("") || total_Pumps.getText().toString().equals("")) {
+                    if (pump_Count.getText().toString().equals("")) {
+                        pump_Count.setError("Pump count cannot be empty");
+                    }
+                    if (time_Duration.getText().toString().equals("")) {
+                        time_Duration.setError("Time duration cannot be empty");
+                    }
+                    if (total_Pumps.getText().toString().equals("")) {
+                        total_Pumps.setError("Total pump count cannot be empty");
+                    }
+                } else {
+                    //Send SMS code
                 }
             }
         });
