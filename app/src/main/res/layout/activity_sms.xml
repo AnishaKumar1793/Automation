@@ -52,11 +52,23 @@
         android:layout_marginBottom="20dp"
         android:hint="Time duration for pump (in minutes)"
         android:inputType="number" />
+
+
+    <EditText
+        android:id="@+id/total_Pumps"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/inputTimer"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:hint="Total number of pumps"
+        android:inputType="number" />
     <Button
         android:id="@+id/turnON"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_below="@id/inputTimer"
+        android:layout_below="@id/total_Pumps"
         android:layout_marginLeft="50dp"
         android:layout_marginStart="50dp"
         android:layout_marginBottom="20dp"
@@ -66,7 +78,7 @@
         android:id="@+id/turnOFF"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_below="@id/inputTimer"
+        android:layout_below="@id/total_Pumps"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginEnd="50dp"
