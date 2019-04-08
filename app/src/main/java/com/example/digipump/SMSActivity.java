@@ -87,6 +87,9 @@ public class SMSActivity extends AppCompatActivity {
         turn_ON.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                pump_Count.setError(null);
+                time_Duration.setError(null);
+                total_Pumps.setError(null);
                 if (pump_Count.getText().toString().equals("") || time_Duration.getText().toString().equals("") || total_Pumps.getText().toString().equals("")) {
                     if (pump_Count.getText().toString().equals("")) {
                         pump_Count.setError("Pump count cannot be empty");
@@ -111,6 +114,8 @@ public class SMSActivity extends AppCompatActivity {
                 } else if (Integer.valueOf(pump_Count.getText().toString()) > Integer.valueOf(total_Pumps.getText().toString())) {
                     pump_Count.setError("\"Simultaneous pump count\" should be smaller than or equal to \"Total pump count\"");
                     total_Pumps.setError("\"Total pump count\" should be greater than or equal to \"Simultaneous pump count\"");
+                } else if (Integer.valueOf(time_Duration.getText().toString()) > 360) {
+                    time_Duration.setError("Time duration cannot be greater than \"6 hours/360 minutes\"");
                 }
             }
         });
