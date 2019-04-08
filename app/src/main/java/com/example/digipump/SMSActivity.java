@@ -97,8 +97,20 @@ public class SMSActivity extends AppCompatActivity {
                     if (total_Pumps.getText().toString().equals("")) {
                         total_Pumps.setError("Total pump count cannot be empty");
                     }
-                } else {
-                    //Send SMS code
+
+                } else if (Integer.valueOf(pump_Count.getText().toString()) == 0 || Integer.valueOf(time_Duration.getText().toString()) == 0 || Integer.valueOf(total_Pumps.getText().toString()) == 0) {
+                    if (Integer.valueOf(pump_Count.getText().toString()) == 0) {
+                        pump_Count.setError("Pump count should be greater than \"0\"");
+                    }
+                    if (Integer.valueOf(time_Duration.getText().toString()) == 0) {
+                        time_Duration.setError("Time duration should be greater than \"0\"");
+                    }
+                    if (Integer.valueOf(total_Pumps.getText().toString()) == 0) {
+                        total_Pumps.setError("Total pump count should be greater than \"0\"");
+                    }
+                } else if (Integer.valueOf(pump_Count.getText().toString()) > Integer.valueOf(total_Pumps.getText().toString())) {
+                    pump_Count.setError("\"Simultaneous pump count\" should be smaller than or equal to \"Total pump count\"");
+                    total_Pumps.setError("\"Total pump count\" should be greater than or equal to \"Simultaneous pump count\"");
                 }
             }
         });
